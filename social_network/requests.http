@@ -1,0 +1,42 @@
+# Создание поста
+POST http://localhost:8000/api/posts/
+Content-Type: application/json
+Authorization: Token 31ac0d850973ef1fa385ce875de63ce90e9e6c6f
+
+{
+    "text": "Моя собака"
+}
+
+# Получение всех постов
+GET http://localhost:8000/api/posts/
+Content-Type: application/json
+
+#Попытка удаление поста другим пользователем
+DELETE http://localhost:8000/api/posts/2/
+Authorization: Token 405cc68229c02f015447ad984b79320a35cefb77
+
+
+# Создание комментария
+POST http://localhost:8000/api/posts/2/comments/
+Content-Type: application/json
+Authorization: Token 405cc68229c02f015447ad984b79320a35cefb77
+
+{
+  "text": "Супер!"
+}
+
+# Удаление комментария
+DELETE http://localhost:8000/api/posts/2/comments/7/
+Authorization: Token 405cc68229c02f015447ad984b79320a35cefb77
+
+
+# Создания лайка к посту
+POST http://localhost:8000/api/posts/4/likes/
+Content-Type: application/json
+Authorization: Token 60603fe04c89f6c4ef66ec40a16253f89821a5c4
+
+# Удаление лайка к посту
+DELETE http://localhost:8000/api/posts/4/likes/
+Content-Type: application/json
+Authorization: Token 60603fe04c89f6c4ef66ec40a16253f89821a5c4
+
